@@ -25,9 +25,9 @@ Output: [[1,100],[7,100]]
 	 * 
 	 */
 	public static void main(String[] args) {
-		int[][]  result  = highFive(new int[][] { 
-			{ 1, 91 }, { 1, 92 }, { 2, 93 }, { 2, 97 }, { 1, 60 }, { 2, 77 }, { 1, 65 }, { 1, 87 },
-				{ 1, 100 }, { 2, 100 }, { 2, 76 } });
+		int[][] result = highFive(new int[][]{
+				{1, 91}, {1, 92}, {2, 93}, {2, 97}, {1, 60}, {2, 77}, {1, 65}, {1, 87},
+				{1, 100}, {2, 100}, {2, 76}});
 		System.out.println(result);
 
 	}
@@ -44,7 +44,7 @@ Output: [[1,100],[7,100]]
 			scores.add(studentScore);
 			map.put(studentId, scores);
 		}
-		int result[][] = new int[map.size()][2];
+		int[][] result = new int[map.size()][2];
 		int i = 0;
 		for (Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {
 			int score = (int) entry.getValue()
