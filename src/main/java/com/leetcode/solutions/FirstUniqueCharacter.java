@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  *
- * https://leetcode.com/problems/first-unique-character-in-a-string/description/?envType=company&envId=goldman-sachs&favoriteSlug=goldman-sachs-three-months
+ * https://leetcode.com/problems/first-unique-character-in-a-string/description/
  *
  */
 public class FirstUniqueCharacter {
