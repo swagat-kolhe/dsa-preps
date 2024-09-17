@@ -7,7 +7,7 @@ package com.leetcode.solutions;
  */
 public class PathWithMaximumGoldLeetCode1219 {
 
-    int rows, columns;
+    int rows , columns;
     int[][] directions = new int[][]{
             {-1, 0},
             {1, 0},
@@ -44,7 +44,7 @@ public class PathWithMaximumGoldLeetCode1219 {
 //        dfs(grid , i , j-1); // LEFT
 
         for (int[] direction : directions) {
-            maxGold = Math.max(maxGold, dfs(grid, (i + direction[0]), (j + direction[1])));
+            maxGold = Math.max(maxGold, dfs(grid, ( i + direction[0]), ( j + direction[1])));
         }
 
         grid[i][j] = originalGoldValue;

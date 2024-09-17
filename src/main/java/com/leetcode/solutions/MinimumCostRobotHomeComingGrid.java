@@ -21,9 +21,9 @@ public class MinimumCostRobotHomeComingGrid {
         int total = 0;
 
         int x1 = Math.min(startPos[0], homePos[0]);
-        int y1 = Math.min(startPos[1], homePos[1]);
-
         int x2 = Math.max(startPos[0], homePos[0]);
+
+        int y1 = Math.min(startPos[1], homePos[1]);
         int y2 = Math.max(startPos[1], homePos[1]);
 
         if (x1 == startPos[0]) {
@@ -40,10 +40,13 @@ public class MinimumCostRobotHomeComingGrid {
             for (int i = y1 + 1; i <= y2; i++) {
                 total += colCosts[i];
             }
+        } else {
+            for (int i = y1; i < y2; i++) {
+                total += colCosts[i];
+            }
         }
 
         return total;
-
     }
 
 
