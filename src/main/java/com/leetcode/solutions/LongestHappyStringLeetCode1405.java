@@ -6,6 +6,8 @@ import java.util.PriorityQueue;
  * https://leetcode.com/problems/longest-happy-string/description
  * <p>
  * https://www.youtube.com/watch?v=kvLiX1Kb4nI
+ * <p>
+ * https://www.youtube.com/watch?v=22Be85BJnRM
  */
 public class LongestHappyStringLeetCode1405 {
 
@@ -15,6 +17,26 @@ public class LongestHappyStringLeetCode1405 {
     }
 
     public String longestDiverseString(int a, int b, int c) {
+        return generate(a, b, c, "a", "b", "c");
+    }
+
+    private String generate(int a, int b, int c, String aa, String bb, String cc) {
+        if (a < b) {
+            return generate(b, a, c, bb, aa, cc);
+        }
+        if (b < c) {
+            return generate(a, c, b, aa, cc, bb);
+        }
+        if (b == 0) {
+            return aa.repeat(Math.min(2, a));
+        }
+        int useA = Math.min(2, a);
+        int useB = (a - useA) >= b ? 1 : 0;
+        return aa.repeat(useA) + bb.repeat(useB) + generate(a - useA, b - useB, c, aa, bb, cc);
+    }
+
+
+    public String longestDiverseString1(int a, int b, int c) {
         PriorityQueue<CharInfo> pq = new PriorityQueue<>((x, y) -> y.count - x.count);
         StringBuilder builder = new StringBuilder();
         if (a > 0) {
@@ -26,7 +48,7 @@ public class LongestHappyStringLeetCode1405 {
         if (c > 0) {
             pq.add(new CharInfo('c', c));
         }
-        int[] currentInfo = new int[] {0, 0};
+        int[] currentInfo = new int[]{0, 0};
         // 0 -> letter
         // 1 -> count
         while (!pq.isEmpty()) {
