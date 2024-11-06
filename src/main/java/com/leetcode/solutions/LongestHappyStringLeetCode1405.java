@@ -21,18 +21,18 @@ public class LongestHappyStringLeetCode1405 {
     }
 
     private String generate(int a, int b, int c, String aa, String bb, String cc) {
-        if (a < b) {
-            return generate(b, a, c, bb, aa, cc);
-        }
-        if (b < c) {
-            return generate(a, c, b, aa, cc, bb);
-        }
-        if (b == 0) {
-            return aa.repeat(Math.min(2, a));
-        }
-        int useA = Math.min(2, a);
-        int useB = (a - useA) >= b ? 1 : 0;
-        return aa.repeat(useA) + bb.repeat(useB) + generate(a - useA, b - useB, c, aa, bb, cc);
+            if (a < b) {
+                return generate(b, a, c, bb, aa, cc);
+            }
+            if (b < c) {
+                return generate(a, c, b, aa, cc, bb);
+            }
+            if (b == 0) {
+                return aa.repeat(Math.min(2, a));
+            }
+            int useA = Math.min(2, a);
+            int useB = (a - useA) >= b ? 1 : 0;
+            return aa.repeat(useA) + bb.repeat(useB) + generate(a - useA, b - useB, c, aa, bb, cc);
     }
 
 
