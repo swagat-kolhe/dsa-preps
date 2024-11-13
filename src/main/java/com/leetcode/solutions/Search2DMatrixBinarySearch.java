@@ -24,7 +24,7 @@ public class Search2DMatrixBinarySearch {
         return false;
     }
 
-    private boolean binarySearch(int[] nums, int target) {
+    private static boolean binarySearch(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;
         while (start <= end) {

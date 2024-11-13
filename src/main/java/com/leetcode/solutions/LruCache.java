@@ -3,6 +3,14 @@ package com.leetcode.solutions;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * https://www.youtube.com/watch?v=81h8O-0U5oo
+ *
+ *
+ * https://leetcode.com/problems/lru-cache/description
+ *
+ */
+
 public class LruCache {
 
     private final int capacity;
